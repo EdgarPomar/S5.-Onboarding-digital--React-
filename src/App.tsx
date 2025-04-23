@@ -16,16 +16,29 @@ const App: React.FC = () => {
     {
       title: 'Pas 2: Carregar el component Card',
       description: 'El component App carregarà el component Card amb les dades.'
+    },
+    {
+      title: 'Pas 3: Afegir navegació',
+      description: 'Ara l\'usuari pot navegar pels diferents passos del tutorial.'
     }
   ]
 
-  const [currentStep, setCurrentStep] = useState(0)
+  const [step, setStep] = useState(0)
+
+  // Funció per passar al següent pas
+  const nextStep = () => {
+    if (step < tutorialData.length - 1) {
+      setStep(step + 1)
+    }
+  }
 
   return (
     <div>
       <Card
-        title={tutorialData[currentStep].title}
-        description={tutorialData[currentStep].description}
+        title={tutorialData[step].title}
+        description={tutorialData[step].description}
+        onNext={nextStep}
+        isLast={step === tutorialData.length - 1}
       />
     </div>
   )
