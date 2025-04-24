@@ -32,15 +32,15 @@ const App: React.FC = () => {
   const [step, setStep] = useState(0)
 
   const nextStep = () => {
-    if (step < tutorialData.length - 1) {
-      setStep(step + 1)
-    }
+    if (step < tutorialData.length - 1) setStep(step + 1)
   }
 
   const prevStep = () => {
-    if (step > 0) {
-      setStep(step - 1)
-    }
+    if (step > 0) setStep(step - 1)
+  }
+
+  const goToStep = (index: number) => {
+    setStep(index)
   }
 
   return (
@@ -55,10 +55,11 @@ const App: React.FC = () => {
         title={tutorialData[step].title}
         description={tutorialData[step].description}
         image={tutorialData[step].image}
-        onNext={nextStep}
-        onPrev={prevStep}
         step={step}
         totalSteps={tutorialData.length}
+        onNext={nextStep}
+        onPrev={prevStep}
+        onDotClick={goToStep}
       />
     </div>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 import {
   CardContainer, ImageSection, StyledImage,
   ContentSection, Title, Description,
-  Footer, NextButton, PrevButton
+  Footer, Dots, NextButton, PrevButton
 } from './Card.styles'
 import Indicator from './Indicator'
 
@@ -14,9 +14,13 @@ type CardProps = {
   totalSteps: number
   onNext: () => void
   onPrev: () => void
+  onDotClick: (index: number) => void
 }
 
-const Card: React.FC<CardProps> = ({ title, description, image, step, totalSteps, onNext, onPrev }) => {
+const Card: React.FC<CardProps> = ({
+  title, description, image, step,
+  totalSteps, onNext, onPrev, onDotClick
+}) => {
   return (
     <CardContainer>
       <ImageSection>
@@ -33,7 +37,9 @@ const Card: React.FC<CardProps> = ({ title, description, image, step, totalSteps
           <div style={{ width: '40px' }} />
         )}
 
-        <Indicator step={step} totalSteps={totalSteps} />
+        <Dots>
+          <Indicator totalSteps={totalSteps} currentStep={step} onDotClick={onDotClick} />
+        </Dots>
 
         {step < totalSteps - 1 ? (
           <NextButton onClick={onNext}>→</NextButton>

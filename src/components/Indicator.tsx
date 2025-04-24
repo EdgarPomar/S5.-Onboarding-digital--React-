@@ -1,32 +1,32 @@
 import styled from 'styled-components'
 
-const DotsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 1rem;
-`
+type Props = {
+  totalSteps: number
+  currentStep: number
+  onDotClick: (index: number) => void
+}
+
+const Indicator: React.FC<Props> = ({ totalSteps, currentStep, onDotClick }) => {
+  return (
+    <>
+      {Array.from({ length: totalSteps }).map((_, index) => (
+        <Dot
+          key={index}
+          active={index === currentStep}
+          onClick={() => onDotClick(index)}
+        />
+      ))}
+    </>
+  )
+}
+
+export default Indicator
 
 const Dot = styled.span<{ active: boolean }>`
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: ${({ active }) => (active ? '#000' : '#ccc')};
+  cursor: pointer;
+  transition: background-color 0.3s;
 `
-
-type IndicatorProps = {
-  step: number
-  totalSteps: number
-}
-
-const Indicator: React.FC<IndicatorProps> = ({ step, totalSteps }) => {
-  return (
-    <DotsContainer>
-      {Array.from({ length: totalSteps }).map((_, index) => (
-        <Dot key={index} active={index === step} />
-      ))}
-    </DotsContainer>
-  )
-}
-
-export default Indicator
