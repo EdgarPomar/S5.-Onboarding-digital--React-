@@ -2,8 +2,9 @@ import React from 'react'
 import {
   CardContainer, ImageSection, StyledImage,
   ContentSection, Title, Description,
-  Footer, Dots, NextButton, PrevButton
+  Footer, NextButton, PrevButton
 } from './Card.styles'
+import Indicator from './Indicator'
 
 type CardProps = {
   title: string
@@ -32,11 +33,7 @@ const Card: React.FC<CardProps> = ({ title, description, image, step, totalSteps
           <div style={{ width: '40px' }} />
         )}
 
-        <Dots>
-          {Array.from({ length: totalSteps }).map((_, i) => (
-            <span key={i} className={i === step ? 'active' : ''}></span>
-          ))}
-        </Dots>
+        <Indicator step={step} totalSteps={totalSteps} />
 
         {step < totalSteps - 1 ? (
           <NextButton onClick={onNext}>→</NextButton>
