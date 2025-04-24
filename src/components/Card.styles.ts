@@ -27,6 +27,7 @@ export const StyledImage = styled.img`
 
 export const ContentSection = styled.div`
   padding: 1.5rem;
+  text-align: center;
 `
 
 export const Title = styled.h2`
@@ -76,4 +77,9 @@ export const NextButton = styled.button`
   justify-content: center;
   font-size: 1.2rem;
   cursor: pointer;
+`
+
+export const PrevButton = styled(NextButton)`
+  background-color: #ccc;
+  color: #000;
 `

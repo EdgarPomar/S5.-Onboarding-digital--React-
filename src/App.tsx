@@ -1,4 +1,3 @@
-// src/App.tsx
 import { useState } from 'react'
 import Card from './components/Card'
 import meditation from './assets/meditation.svg'
@@ -38,6 +37,12 @@ const App: React.FC = () => {
     }
   }
 
+  const prevStep = () => {
+    if (step > 0) {
+      setStep(step - 1)
+    }
+  }
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -51,7 +56,7 @@ const App: React.FC = () => {
         description={tutorialData[step].description}
         image={tutorialData[step].image}
         onNext={nextStep}
-        isLast={step === tutorialData.length - 1}
+        onPrev={prevStep}
         step={step}
         totalSteps={tutorialData.length}
       />
