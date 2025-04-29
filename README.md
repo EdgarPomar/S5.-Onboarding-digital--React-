@@ -1,15 +1,46 @@
-# 🚀 Proyecto de Tarjetas Interactivas con React
+# 🧠 React + TypeScript Learning Project
 
-Este proyecto forma parte de una serie de ejercicios para aprender a trabajar con componentes, props y estado en **React**. El objetivo principal es crear una interfaz de usuario con tarjetas que muestran información y permiten al usuario navegar entre ellas.
+Welcome to this **React + TypeScript** learning project!  
+This repository includes step-by-step exercises designed to help you practice core concepts of modern frontend development using React and TypeScript.
 
-## 🧠 Requisitos Previos
+---
 
-Antes de comenzar, asegúrate de tener conocimientos básicos de:
-- HTML y CSS
-- JavaScript moderno (ES6+)
-- Fundamentos de React: JSX, componentes, props y hooks
+## 🚀 Project Goal
 
-## 📁 Estructura del Proyecto
+Build a dynamic and interactive UI using reusable components, state management, and user interaction logic. The project consists of levels with different exercises, such as:
 
-La estructura general del proyecto es la siguiente:
+- Navigating through cards using arrows
+- Highlighting the current card using indicators
+- Practicing with component communication and data flow
 
+---
+
+## 🛠️ Tech Stack
+
+- **React** (with Vite)
+- **TypeScript**
+- **CSS Modules** or **Styled Components**
+- Optionally: **Framer Motion**, **React Icons**, etc.
+
+---
+
+## 📦 Installation & Setup
+
+Follow these steps to install and run the project locally:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/EdgarPomar/S5.-Onboarding-digital--React-.git
+npm install
+npm run dev
+
+📁 Folder Structure
+```bash
+Copiar
+Editar
+/src
+├── assets            # Static images and resources
+├── components        # Reusable components like Card, Indicator
+├── App.tsx           # Main app logic and routing
+└── main.tsx          # Entry point
