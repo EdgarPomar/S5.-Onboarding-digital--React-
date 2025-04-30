@@ -19,8 +19,10 @@ Build a dynamic and interactive UI using reusable components, state management, 
 
 - **React** (with Vite)
 - **TypeScript**
-- **CSS Modules** or **Styled Components**
-- Optionally: **Framer Motion**, **React Icons**, etc.
+- **Styled Components**
+- Optionally:
+  - **Framer Motion**
+  - **React Icons**
 
 ---
 
@@ -32,15 +34,47 @@ Follow these steps to install and run the project locally:
 
 ```bash
 git clone https://github.com/EdgarPomar/S5.-Onboarding-digital--React-.git
+cd S5.-Onboarding-digital--React-
 npm install
 npm run dev
 
 📁 Folder Structure
 ```bash
-Copiar
-Editar
 /src
-├── assets            # Static images and resources
-├── components        # Reusable components like Card, Indicator
-├── App.tsx           # Main app logic and routing
-└── main.tsx          # Entry point
+├── assets            # Static images and SVGs
+│   ├── meditation.svg
+│   ├── programming.svg
+│   ├── react.svg
+│   └── time_management.svg
+├── components        # Reusable components
+│   ├── Card.styles.ts
+│   ├── Card.tsx
+│   └── Indicator.tsx
+├── App.tsx           # Main app logic and component structure
+└── main.tsx          # React entry point
+
+## 💡 Features
+
+- Card navigation system with arrow buttons  
+- Visual step indicator to show active card  
+- Clean modular component structure  
+- Strong typing with TypeScript  
+- Styled Components for scoped styling  
+
+---
+
+## 🔧 Development Tips
+
+- Use `Props` interfaces to define and enforce component contracts  
+- Break down UI into small reusable components  
+- Use `useState` and `useEffect` hooks to manage dynamic behavior  
+- Apply CSS-in-JS styling for scoped, dynamic styles  
+
+---
+
+## 🧪 Future Enhancements (Ideas)
+
+- Add transitions with **Framer Motion**  
+- Enable touch/swipe navigation  
+- Add accessibility features  
+- Implement tests with **React Testing Library**
